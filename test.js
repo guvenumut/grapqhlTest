@@ -18,7 +18,7 @@ let userType = new GraphQLObjectType({
         first_name: {type:GraphQLString},
         last_name: {type:GraphQLString},
         email: {type:GraphQLString},
-        password: {type:GraphQLString}
+        ip_address: {type:GraphQLString}
 ,
 
     })
@@ -46,11 +46,11 @@ const Mutation =  new GraphQLObjectType({
                 firstName: {type:GraphQLString},
                 lastname: {type:GraphQLString},
                 email: {type:GraphQLString},
-                password: {type:GraphQLInt}
+                ip_address: {type:GraphQLInt}
                 
             },
             resolve(parent,args ){
-                userData.push({id:userData.length + 1,first_name:args.first_name,last_name:args.last_name,email:args.email,password:args.password})
+                userData.push({id:userData.length + 1,first_name:args.first_name,last_name:args.last_name,email:args.email,ip_address:args.ip_address})
                 return args
             }
         }
